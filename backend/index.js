@@ -16,6 +16,8 @@ app.use(express.static(__dirname +'public'))
 /* routes */
 const UserRoutes = require('./routes/UserRoutes')
 app.use('/users', UserRoutes)
+const PetsRoutes = require('./routes/PetsRoutes')
+app.use('/pets',PetsRoutes)
 
 
 app.listen(5000)

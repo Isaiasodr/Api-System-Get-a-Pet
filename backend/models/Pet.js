@@ -1,4 +1,4 @@
-const { INTEGER } = require('sequelize')
+
 const mongoose = require('../db/conn')
 const { Schema } = mongoose
 
@@ -13,7 +13,7 @@ const Pet = mongoose.model(
             type: Number,
             required: true
         },
-        Weight: {
+        weight: {
             type: Number,
             required: true
         },
@@ -23,7 +23,7 @@ const Pet = mongoose.model(
         },
         images: {
             type: String,
-            required: true
+            required:true
         },
 
         available: {
