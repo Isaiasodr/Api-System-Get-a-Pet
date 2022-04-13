@@ -8,7 +8,10 @@ const getUserByToken = require('../helpers/get-user-by-token')
 
 module.exports = class PetController {
     static async create(req, res) {
+
         const { name, age, weight, color } = req.body
+
+        const images = req.files
         const available = true
 
         //upload de imagens
@@ -18,16 +21,17 @@ module.exports = class PetController {
             res.status(422).json({ message: 'o nome do pet é obrigatório' })
             return
         }
-        if (!age) {
-            res.status(422).json({ message: 'a idade  do pet é obrigatório' })
-            return
-        }
+       
         if (!weight) {
             res.status(422).json({ message: 'o peso do pet é obrigatório' })
             return
         }
         if (!color) {
             res.status(422).json({ message: 'a cor do pet é obrigatório' })
+            return
+        }
+        if (images.length === 0) {
+            res.status(422).json({ message: 'a imagem do pet é obrigatório' })
             return
         }
         /* get pet owner */
@@ -47,6 +51,11 @@ module.exports = class PetController {
                 image:user.image,
                 phone:user.phone,
             },
+           
+            
+        })
+        images.map((image) =>{
+            pet.images.push(image.filename)
         })
         try {
             const newPet = await pet.save()

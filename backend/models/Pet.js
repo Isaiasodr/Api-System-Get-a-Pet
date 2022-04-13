@@ -18,11 +18,11 @@ const Pet = mongoose.model(
             required: true
         },
         color: {
-            type: Array,
+            type: String,
             required: true
         },
         images: {
-            type: String,
+            type: Array,
             required:true
         },
 
