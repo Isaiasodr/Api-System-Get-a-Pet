@@ -30,7 +30,7 @@ const Pet = mongoose.model(
             type: Boolean
         },
         user: Object,
-        adpter: Object
+        adopter: Object
 
     },
         /* define quando o dado foi criado ou atualizado */

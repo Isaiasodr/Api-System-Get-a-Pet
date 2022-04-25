@@ -3,17 +3,17 @@ const User = require('../models/User')
 
 /* get user by jwt token */
 
-const getUserByToken = async(token)=>{
+const getUserByToken = async (token) => {
 
-    if (!token) {
-        return res.status(401).json({ error: 'Acesso negado!' })
-    }
-    const decoded = jwt.verify(token,'nossosecret')
+    if (!token){
 
-    const userId = decoded.id
+        return res.status(401).json({ message: 'Acesso Negado' })
+    } 
 
-    const user = await User.findOne({_id:userId})
+    const decoded = jwt.verify(token, 'nossosecret')
+    const userId = decoded.id;
+    const user = await User.findOne({ _id: userId })
 
-    return user;
-};
+    return user
+}
 module.exports = getUserByToken;
