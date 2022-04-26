@@ -20,4 +20,3 @@ const PetsRoutes = require('./routes/PetsRoutes')
 app.use('/pets',PetsRoutes)
 
 
-app.listen(5000)
