@@ -1,6 +1,6 @@
 # Api-System-Get-a-Pet
 Sistema desenvolvido no curso de Node.js do zero a maestria oara adoção de Pets, no primeiro momento foi criado uma API aplicando as regras de negócio do sistema e testando as funcionalidades com 
-o software Postman, após a finalização da API foi criada a interface do usuário com React.js fazendo a integração com a API.
+o software Postman, após a finalização da API foi criada a interface do usuário com React.js.
 ### Tecnologias utilizadas
  * Plataforma Node.js
  * React.js
